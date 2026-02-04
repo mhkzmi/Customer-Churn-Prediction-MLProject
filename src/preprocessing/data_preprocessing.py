@@ -25,7 +25,7 @@ def preprocess_data(df: pd.DataFrame):
 
     # Convert TotalCharges
     df["TotalCharges"] = pd.to_numeric(df["TotalCharges"], errors="coerce")
-    df["TotalCharges"].fillna(df["TotalCharges"].median(), inplace=True)
+    df["TotalCharges"] = df["TotalCharges"].fillna(df["TotalCharges"].median())
 
     # Separate target
     X = df.drop(columns=["Churn"])

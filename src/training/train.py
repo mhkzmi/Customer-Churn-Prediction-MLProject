@@ -33,4 +33,4 @@ def train_model(
 
     model.fit(X_train, y_train)
 
-    return model, X_test, y_test
+    return model, X_train, X_test, y_train, y_test
