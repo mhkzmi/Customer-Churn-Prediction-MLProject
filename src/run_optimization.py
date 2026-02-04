@@ -7,7 +7,14 @@ from src.evaluation.evaluate import evaluate_model
 from src.training.optimization.threshold import threshold_sweep
 from src.evaluation.plots import plot_threshold_vs_f1
 from src.models.logistic_model import build_model as build_logistic
-
+from src.training.optimization.feature_importance import (
+    get_logistic_feature_importance,
+    save_feature_importance
+)
+from src.preprocessing.feature_selection import SELECTED_FEATURES
+from src.training.optimization.feature_selection_training import (
+    train_test_logistic_with_selected_features
+)
 
 def main():
 
@@ -70,6 +77,25 @@ def main():
     print("Recall at Best Threshold:", best_row["recall"])
 
     plot_threshold_vs_f1(threshold_results)
+
+    feature_names = X.columns
+
+    fi = get_logistic_feature_importance(
+        log_model,
+        feature_names
+    )
+
+    save_feature_importance(fi)
+
+    print("Training & testing Logistic Regression with SELECTED_FEATURES...")
+
+    train_test_logistic_with_selected_features(
+        X=X,
+        y=y,
+        selected_features=SELECTED_FEATURES,
+        model_name="logistic_selected_features",
+        results_dir="../results"
+    )
 
 
 if __name__ == "__main__":
