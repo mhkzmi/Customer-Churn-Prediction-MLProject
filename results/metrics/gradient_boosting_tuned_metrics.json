@@ -1,0 +1,32 @@
+{
+    "model": "gradient_boosting_tuned",
+    "f1_score": 0.5545171339563862,
+    "roc_auc": NaN,
+    "classification_report": {
+        "0": {
+            "precision": 0.8282208588957055,
+            "recall": 0.9130434782608695,
+            "f1-score": 0.8685661764705882,
+            "support": 1035.0
+        },
+        "1": {
+            "precision": 0.664179104477612,
+            "recall": 0.47593582887700536,
+            "f1-score": 0.5545171339563862,
+            "support": 374.0
+        },
+        "accuracy": 0.7970191625266146,
+        "macro avg": {
+            "precision": 0.7461999816866587,
+            "recall": 0.6944896535689374,
+            "f1-score": 0.7115416552134872,
+            "support": 1409.0
+        },
+        "weighted avg": {
+            "precision": 0.784678193067198,
+            "recall": 0.7970191625266146,
+            "f1-score": 0.7852061041495723,
+            "support": 1409.0
+        }
+    }
+}
