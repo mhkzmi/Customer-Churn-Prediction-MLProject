@@ -63,3 +63,16 @@ def plot_roc_curve(
     plt.tight_layout()
     plt.savefig(plots_path / f"{model_name}_roc_curve.png")
     plt.close()
+
+
+def plot_threshold_vs_f1(df):
+
+    plt.figure(figsize=(8, 5))
+    plt.plot(df["threshold"], df["f1"], marker="o")
+    plt.xlabel("Threshold")
+    plt.ylabel("F1-score")
+    plt.title("Threshold vs F1-score (Logistic Regression)")
+    plt.grid(True)
+    plt.tight_layout()
+    plt.savefig("../results/figures/logistic_threshold_vs_f1.png")
+    # plt.show()
