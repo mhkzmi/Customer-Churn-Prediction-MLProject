@@ -4,8 +4,8 @@ from sklearn.ensemble import GradientBoostingClassifier
 from sklearn.metrics import make_scorer, f1_score
 
 f1_scorer = make_scorer(
-    f1_score,
-    pos_label="Yes"
+    f1_score
+    # ,pos_label="Yes"
 )
 
 def tune_gradient_boosting(X_train, y_train):

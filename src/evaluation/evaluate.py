@@ -38,7 +38,7 @@ def evaluate_model(
     else:
         roc_auc = None
 
-    f1 = f1_score(y_test, y_pred, pos_label="Yes")
+    f1 = f1_score(y_test, y_pred)
     report = classification_report(
         y_test,
         y_pred,

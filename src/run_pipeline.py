@@ -29,7 +29,7 @@ def main():
 
     # Train & evaluate
     for name, model in models.items():
-        trained_model, X_test, y_test = train_model(model, X, y)
+        trained_model, X_train, X_test, y_train, y_test = train_model(model, X, y)
         evaluate_model(
             trained_model,
             X_test,
