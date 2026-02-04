@@ -29,7 +29,7 @@ def preprocess_data(df: pd.DataFrame):
 
     # Separate target
     X = df.drop(columns=["Churn"])
-    y = df["Churn"]
+    y = df["Churn"].map({"No":0, "Yes":1})
 
     # Identify feature types
     categorical_features = X.select_dtypes(include="object").columns

@@ -17,8 +17,6 @@ def main():
     print("Preprocessing...")
     X, y = preprocess_data(df)
 
-    y = y.map({"No": 0, "Yes": 1})
-
     # Split using train_model but ignore fitted model
     from sklearn.ensemble import GradientBoostingClassifier
 

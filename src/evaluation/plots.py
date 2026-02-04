@@ -9,7 +9,7 @@ def plot_confusion_matrix(
     model_name: str,
     results_dir: str = "../results"
 ):
-    cm = confusion_matrix(y_true, y_pred, labels=["No", "Yes"])
+    cm = confusion_matrix(y_true, y_pred)
 
     fig, ax = plt.subplots(figsize=(5, 4))
     im = ax.imshow(cm)
