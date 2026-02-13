@@ -1,7 +1,7 @@
 {
     "model": "logistic_regression",
     "f1_score": 0.6040462427745664,
-    "roc_auc": NaN,
+    "roc_auc": 0.8420134852359916,
     "classification_report": {
         "0": {
             "precision": 0.8487626031164069,

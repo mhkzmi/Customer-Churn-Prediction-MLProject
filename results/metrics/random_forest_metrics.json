@@ -1,7 +1,7 @@
 {
     "model": "random_forest",
     "f1_score": 0.5555555555555556,
-    "roc_auc": NaN,
+    "roc_auc": 0.8260766230075693,
     "classification_report": {
         "0": {
             "precision": 0.8307967770814683,

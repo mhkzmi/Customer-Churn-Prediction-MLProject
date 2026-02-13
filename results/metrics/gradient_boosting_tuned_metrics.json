@@ -1,7 +1,7 @@
 {
     "model": "gradient_boosting_tuned",
     "f1_score": 0.5545171339563862,
-    "roc_auc": NaN,
+    "roc_auc": 0.8456599240486709,
     "classification_report": {
         "0": {
             "precision": 0.8282208588957055,

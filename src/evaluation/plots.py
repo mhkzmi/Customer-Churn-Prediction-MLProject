@@ -43,7 +43,7 @@ def plot_roc_curve(
     results_dir: str = "../results"
 ):
     fpr, tpr, _ = roc_curve(
-        (y_true == "Yes").astype(int),
+        y_true,
         y_proba
     )
     roc_auc = auc(fpr, tpr)

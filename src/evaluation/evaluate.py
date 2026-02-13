@@ -1,4 +1,5 @@
 import json
+import numpy as np
 from pathlib import Path
 
 from sklearn.metrics import (
@@ -25,16 +26,19 @@ def evaluate_model(
         results_dir (str): base directory to save results
     """
 
+    def to01(y):
+        y = np.asarray(y)
+        if y.dtype.kind in {"U", "S", "O"}:  # string/object
+            return (y == "Yes").astype(int)
+        return y.astype(int)
     # Predictions
     y_pred = model.predict(X_test)
 
     # Probabilities (for ROC-AUC if available)
     if hasattr(model, "predict_proba"):
         y_proba = model.predict_proba(X_test)[:, 1]
-        roc_auc = roc_auc_score(
-            (y_test == "Yes").astype(int),
-            y_proba
-        )
+        roc_auc = roc_auc_score(to01(y_test), y_proba)
+
     else:
         roc_auc = None
 
